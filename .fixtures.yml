@@ -1,0 +1,10 @@
+fixtures:
+    repositories:
+        apache: "https://github.com/puppetlabs/puppetlabs-apache.git"
+        corosync: "https://github.com/puppetlabs/puppetlabs-corosync.git"
+        stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+        concat: "https://github.com/puppetlabs/puppetlabs-concat.git"
+        mysql: "https://github.com/puppetlabs/puppetlabs-mysql.git"
+        firewall: "https://github.com/puppetlabs/puppetlabs-firewall.git"
+    symlinks:
+        stdmodule: "#{source_dir}"
