@@ -21,7 +21,8 @@ PuppetLint.configuration.ignore_paths = ["vendor/**/*.pp", "spec/**/*.pp"]
 PuppetLint.configuration.with_filename = true
 PuppetLint.configuration.send("disable_80chars")
 
-task :default => [:spec_prep, :test]
+task :default => [:spec_prep, :test, :lint]
+task :testonly => [:spec_prep, :test]
 task :lintonly => [:spec_prep, :lint]
 task :clean => :spec_clean
 
