@@ -22,7 +22,7 @@ class stdmodule::package_file_service (
     }
     package { 'mysql-server':
         ensure  => absent,
-        require => File['/etc/my.cnf'],
+        require => File['/etc/my.cnf'], # <- resource references are starting with capital letter
     }
     # config file
     file { '/etc/my.cnf':

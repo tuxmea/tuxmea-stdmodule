@@ -17,7 +17,9 @@ RSpec::Core::RakeTask.new(:doc) do |t|
   t.pattern = 'spec/*/*_spec.rb'
 end
 
+PuppetLint.configuration.ignore_paths = ["vendor/**/*.pp", "spec/**/*.pp"]
 PuppetLint.configuration.with_filename = true
+PuppetLint.configuration.send("disable_80chars")
 
 task :default => [:spec_prep, :test]
 task :lintonly => [:spec_prep, :lint]
