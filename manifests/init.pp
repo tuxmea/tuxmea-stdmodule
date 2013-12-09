@@ -9,6 +9,6 @@
 class stdmodule (
     $myparam = hiera('stdmodule::myparam', 'foo')
 ){
-    #    include stdmodule::basic
-    #include stdmodule::package_file_service
+    include stdmodule::basic
+    include stdmodule::package_file_service
 }

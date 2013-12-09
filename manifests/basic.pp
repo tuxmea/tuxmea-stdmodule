@@ -20,7 +20,7 @@ class stdmodule::basic (
         ensure      => present,
         gid         => 'foobar', # <- when using a string here you have to manage group too
         shell       => '/bin/bash',
-        manage_home => true,
+        managehome  => true,
     }
     # file resource
     file { '/home/foobar/test':
@@ -31,12 +31,11 @@ class stdmodule::basic (
         mode    => '0444',
     }
     file { '/home/foobar/test2':
-        ensure => symlink,
+        ensure => link,
         target => '/home/foobar/test',
     }
-    file { '/home/foobar/testdir':
+    file { '/home/foobar/testdir':
         ensure => directory,
         owner  => 'foobar',
-        group  => 0,
     }
 }
