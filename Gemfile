@@ -8,7 +8,8 @@ gem "mocha", :require => false
 gem 'puppet',       '>= 3.1.1'
 gem 'puppet-lint'
 gem 'facter',       '>= 1.6.10'
-gem 'rspec-puppet'
+#gem 'rspec-puppet'
+gem 'rspec-puppet', :git => "https://github.com/rodjek/rspec-puppet.git"
 gem 'rake',         '>= 0.9.2'
 gem 'puppetlabs_spec_helper'
 gem 'test-unit'
