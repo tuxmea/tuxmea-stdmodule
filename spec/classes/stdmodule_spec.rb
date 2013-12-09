@@ -1,11 +1,8 @@
 require 'spec_helper'
-hiera_config = 'spec/fixtures/hiera/hiera.yaml'
+hiera_file = 'spec/fixtures/hiera/hiera.yaml'
 
 # test our main class (init.pp)
 describe 'stdmodule', :type => :class  do
-
-    # set hiera_config
-    let (:hiera_config) { hiera_config }
 
     # test without hiera lookup (using class defaults)
     context 'without hiera data' do
@@ -23,7 +20,10 @@ describe 'stdmodule', :type => :class  do
 
     # test with explicit hiera lookup
     context 'with explicit hiera lookup' do
-        hiera = Hiera.new(:config => hiera_config)
+        # set hiera_config
+        let (:hiera_config) { hiera_file }
+
+        hiera = Hiera.new(:config => hiera_file)
         variable = hiera.lookup('stdmodule::myparam', nil, nil)
         let (:params) {{
             :myparam => variable
