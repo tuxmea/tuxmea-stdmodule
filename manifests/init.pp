@@ -5,6 +5,6 @@
 # Author: Martin Alfke <tuxmea@gmail.com>
 #
 class stdmodule (
-    $myparam
+    $myparam = hiera('stdmodule::myparam', 'foo')
 ){
 }
