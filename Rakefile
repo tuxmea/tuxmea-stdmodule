@@ -11,12 +11,6 @@ RSpec::Core::RakeTask.new(:test) do |t|
   t.pattern = 'spec/*/*_spec.rb'
 end
 
-desc "Generate the docs"
-RSpec::Core::RakeTask.new(:doc) do |t|
-  t.rspec_opts = ['--format', 'documentation']
-  t.pattern = 'spec/*/*_spec.rb'
-end
-
 PuppetLint.configuration.ignore_paths = ["vendor/**/*.pp", "spec/**/*.pp"]
 PuppetLint.configuration.with_filename = true
 PuppetLint.configuration.send("disable_80chars")

@@ -16,7 +16,7 @@ class stdmodule::defaults (
         mode  => '0644' # <- directories will get +1 for each non zero value 0644 -> 0755
     }
     Package {   # <- do not do that (yet). Puppet will make a single call for each package
-        ensure => absent,
+        ensure => present,
     }
 
     # overwriting defaults is possible:
